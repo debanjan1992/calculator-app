@@ -1,3 +1,5 @@
+import { Errors } from "../types";
+
 function applyOp(op: string, b: number, a: number) {
     switch (op) {
         case '+':
@@ -8,7 +10,7 @@ function applyOp(op: string, b: number, a: number) {
             return a * b;
         case '/':
             if (b == 0) {
-                document.write("Cannot divide by zero");
+                throw new Error(Errors.DivideBy0);
             }
             return parseInt(`${a / b}`, 10);
     }

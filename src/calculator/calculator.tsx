@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { isDigit, isOperator } from "../store/utils/calculator";
 
 const Calculator = () => {
-    const { display, value } = useSelector((state: any) => state.calculator);
+    const { display, value, error } = useSelector((state: any) => state.calculator);
     const dispatch = useDispatch();
 
     const onButtonClick = (key: string) => {
@@ -19,7 +19,6 @@ const Calculator = () => {
 
     useEffect(() => {
         const onKeyPress = (e: KeyboardEvent) => {
-            console.log("Called", e.key);
             if (isDigit(e.key) || isOperator(e.key) || e.key === "Enter" || e.key === "Backspace") {
                 onButtonClick(e.key);
             }
@@ -33,7 +32,9 @@ const Calculator = () => {
 
     return <div className="container">
         <div className="display">
-            <p>{display}</p>
+            <p style={{
+                fontSize: error ? "20px" : "inherit"
+            }}>{display}</p>
         </div>
         <div className="button-wrapper">
             <div className="row">
