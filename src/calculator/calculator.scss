@@ -1,0 +1,94 @@
+.container {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #21242e;
+    padding: 20px;
+    border-radius: 40px;
+    overflow: hidden;
+    width: 310px;
+    box-sizing: border-box;
+
+    .display {
+        height: 150px;
+        font-size: 48px;
+        text-align: right;
+        color: white;
+        max-width: 250px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        text-size-adjust: auto;
+    }
+
+    .button-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+
+            .secondary-display {
+                width: 130px;
+                border-radius: 20px;
+                align-content: center;
+                text-align: center;
+                height: 60px;
+                background-color: #3a3b3d;
+                color: rgb(201, 201, 201);
+                font-weight: 600;
+                font-size: 24px;
+                transition: 0.4s;
+                user-select: none;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                padding: 5px;
+                box-sizing: border-box;
+            }
+
+            .btn {
+                align-content: center;
+                text-align: center;
+                width: 60px;
+                height: 60px;
+                border-radius: 100%;
+                background-color: #374461;
+                color: white;
+                font-weight: 600;
+                font-size: 24px;
+                cursor: pointer;
+                transition: 0.4s;
+                user-select: none;
+
+                &:hover {
+                    background-color: #525a6b;
+                }
+
+                &.action {
+                    background-color: #be8d44;
+
+                    &:hover {
+                        background-color: #ecb158;
+                    }
+                }
+
+                &.action.calculate {
+                    background-color: #a12929;
+
+                    &:hover {
+                        background-color: #c24343;
+                    }
+                }
+
+            }
+
+            .material-symbols-outlined {
+                position: relative;
+                top: 3px;
+            }
+        }
+    }
+}
